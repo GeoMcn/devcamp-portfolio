@@ -1,0 +1,220 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"portfo",
+				"portfolio_item"
+			],
+			[
+				"portfolio",
+				"portfolio_item"
+			],
+			[
+				"po",
+				"portfolio_item"
+			],
+			[
+				"portfol",
+				"portfolio_items"
+			],
+			[
+				"t",
+				"titleize"
+			],
+			[
+				"active",
+				"active_record"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/george/Desktop/RoutingApp/app/models/blog.rb",
+		"/home/george/Desktop/RoutingApp/app/controllers/pages_controller.rb",
+		"/home/george/Desktop/RoutingApp/app/views/pages/something.html.erb",
+		"/home/george/Desktop/RoutingApp/config/routes.rb",
+		"/home/george/Desktop/RoutingApp/app/controllers/posts_controller.rb",
+		"/home/george/Desktop/RoutingApp/app/views/posts/new.html.erb",
+		"/home/george/Desktop/RoutingApp/app/views/posts/missing.html.erb",
+		"/home/george/Desktop/RoutingApp/app/views/posts/index.html.erb",
+		"/home/george/Desktop/RoutingApp/app/controllers/admin/dashboard_controller.rb",
+		"/home/george/Desktop/RoutingApp/app/views/pages/home.html.erb",
+		"/home/george/DevcampPortfolio/db/migrate/20181107191110_add_post_status_to_blogs.rb",
+		"/home/george/DevcampPortfolio/db/schema.rb",
+		"/home/george/DevcampPortfolio/app/models/portfolio.rb",
+		"/home/george/DevcampPortfolio/app/views/portfolios/show.html.erb",
+		"/home/george/DevcampPortfolio/app/views/portfolios/index.html.erb",
+		"/home/george/DevcampPortfolio/Gemfile",
+		"/home/george/DevcampPortfolio/app/views/blogs/index.html.erb",
+		"/home/george/DevcampPortfolio/app/views/portfolios/new.html.erb",
+		"/home/george/DevcampPortfolio/app/controllers/blogs_controller.rb",
+		"/home/george/DevcampPortfolio/app/views/portfolios/edit.html.erb",
+		"/home/george/DevcampPortfolio/app/models/skill.rb",
+		"/home/george/Desktop/GeneratorApp/lib/templates/erb/scaffold/index.html.erb",
+		"/home/george/DevcampPortfolio/db/seeds.rb",
+		"/home/george/Desktop/GeneratorApp/app/views/layouts/application.html.erb",
+		"/home/george/Desktop/GeneratorApp/lib/templates/scaffold",
+		"/home/george/Desktop/GeneratorApp/lib/templates/erb",
+		"/home/george/Desktop/GeneratorApp/config/application.rb",
+		"/home/george/DevcampPortfolio/app/views/pages/home.html.erb",
+		"/home/george/DevcampPortfolio/app/controllers/pages_controller.rb",
+		"/home/george/DevcampPortfolio/README.md",
+		"/home/george/DevcampPortfolio/app/views/blogs/new.html.erb",
+		"/home/george/DevcampPortfolio/app/assets/stylesheets/scaffolds.scss"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "blog.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
