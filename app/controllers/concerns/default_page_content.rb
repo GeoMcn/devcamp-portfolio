@@ -3,11 +3,12 @@ module DefaultPageContent
 
 	included do 
 		
-		before_action :set_title
+		before_action :set_page_defaults
     end
 
-    def set_title
+    def set_page_defaults
 	  @page_title = "Devcamp Portfolio | George's Portfolio Website"
+	  @seo_keywords = "Georges portfolio"
 	end
 end
 
