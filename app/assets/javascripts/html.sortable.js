@@ -193,7 +193,8 @@ var _attachGhost = function(event, ghost) {
   // this needs to be set for HTML5 drag & drop to work
   event.dataTransfer.effectAllowed = 'move';
   event.dataTransfer.setData('text', '');
-   // check if setDragImage method is available
+
+  // check if setDragImage method is available
   if (event.dataTransfer.setDragImage) {
     event.dataTransfer.setDragImage(ghost.draggedItem, ghost.x, ghost.y);
   }
@@ -443,8 +444,10 @@ var _dispatchEventOnConnected = function(sortableElement, event) {
  * @param {object|string} options|method
  */
 var sortable = function(sortableElements, options) {
-   var method = String(options);
-   options = (function(options) {
+
+  var method = String(options);
+
+  options = (function(options) {
     var result = {
       connectWith: false,
       placeholder: null,
@@ -460,21 +463,27 @@ var sortable = function(sortableElements, options) {
     }
     return result;
   })(options);
-   if (typeof sortableElements === 'string') {
+
+  if (typeof sortableElements === 'string') {
     sortableElements = document.querySelectorAll(sortableElements);
   }
-   if (sortableElements instanceof window.Element) {
+
+  if (sortableElements instanceof window.Element) {
     sortableElements = [sortableElements];
   }
-   sortableElements = Array.prototype.slice.call(sortableElements);
-   /* TODO: maxstatements should be 25, fix and remove line below */
+
+  sortableElements = Array.prototype.slice.call(sortableElements);
+
+  /* TODO: maxstatements should be 25, fix and remove line below */
   /*jshint maxstatements:false */
   sortableElements.forEach(function(sortableElement) {
-     if (/enable|disable|destroy/.test(method)) {
+
+    if (/enable|disable|destroy/.test(method)) {
       sortable[method](sortableElement);
       return;
     }
-     // get options & set options on sortable
+
+    // get options & set options on sortable
     options = _data(sortableElement, 'opts') || options;
     _data(sortableElement, 'opts', options);
     // reset sortable
@@ -494,38 +503,45 @@ var sortable = function(sortableElements, options) {
       placeholder.classList,
       options.placeholderClass.split(' ')
     );
-     // setup sortable ids
+
+    // setup sortable ids
     if (!sortableElement.getAttribute('data-sortable-id')) {
       var id = sortables.length;
       sortables[id] = sortableElement;
       _attr(sortableElement, 'data-sortable-id', id);
       _attr(items, 'data-item-sortable-id', id);
     }
-     _data(sortableElement, 'items', options.items);
+
+    _data(sortableElement, 'items', options.items);
     placeholders.push(placeholder);
     if (options.connectWith) {
       _data(sortableElement, 'connectWith', options.connectWith);
     }
-     _enableSortable(sortableElement);
+
+    _enableSortable(sortableElement);
     _attr(items, 'role', 'option');
     _attr(items, 'aria-grabbed', 'false');
-     // Mouse over class
+
+    // Mouse over class
     if (options.hoverClass) {
       var hoverClass = 'sortable-over';
       if (typeof options.hoverClass === 'string') {
         hoverClass = options.hoverClass;
       }
-       _on(items, 'mouseenter', function() {
+
+      _on(items, 'mouseenter', function() {
         this.classList.add(hoverClass);
       });
       _on(items, 'mouseleave', function() {
         this.classList.remove(hoverClass);
       });
     }
-     // Handle drag events on draggable items
+
+    // Handle drag events on draggable items
     _on(items, 'dragstart', function(e) {
       e.stopImmediatePropagation();
-       if (options.dragImage) {
+
+      if (options.dragImage) {
         _attachGhost(e, {
           draggedItem: options.dragImage,
           x: 0,
@@ -563,7 +579,8 @@ var sortable = function(sortableElements, options) {
       _attr(dragging, 'aria-grabbed', 'false');
       dragging.style.display = dragging.oldDisplay;
       delete dragging.oldDisplay;
-       placeholders.forEach(_detach);
+
+      placeholders.forEach(_detach);
       newParent = this.parentElement;
       _dispatchEventOnConnected(sortableElement, _makeEvent('sortstop', {
         item: dragging,
@@ -591,18 +608,21 @@ var sortable = function(sortableElements, options) {
       if (!_listsConnected(sortableElement, dragging.parentElement)) {
         return;
       }
-       e.preventDefault();
+
+      e.preventDefault();
       e.stopPropagation();
       visiblePlaceholder = placeholders.filter(_attached)[0];
       _after(visiblePlaceholder, dragging);
       dragging.dispatchEvent(_makeEvent('dragend'));
     });
-     // Handle dragover and dragenter events on draggable items
+
+    // Handle dragover and dragenter events on draggable items
     var onDragOverEnter = function(e) {
       if (!_listsConnected(sortableElement, dragging.parentElement)) {
         return;
       }
-       e.preventDefault();
+
+      e.preventDefault();
       e.stopPropagation();
       e.dataTransfer.dropEffect = 'move';
       if (items.indexOf(this) !== -1) {
@@ -612,7 +632,8 @@ var sortable = function(sortableElements, options) {
         if (options.forcePlaceholderSize) {
           placeholder.style.height = draggingHeight + 'px';
         }
-         // Check if `this` is bigger than the draggable. If it is, we have to define a dead zone to prevent flickering
+
+        // Check if `this` is bigger than the draggable. If it is, we have to define a dead zone to prevent flickering
         if (thisHeight > draggingHeight) {
           // Dead zone?
           var deadZone = thisHeight - draggingHeight;
@@ -626,7 +647,8 @@ var sortable = function(sortableElements, options) {
             return;
           }
         }
-         if (dragging.oldDisplay === undefined) {
+
+        if (dragging.oldDisplay === undefined) {
           dragging.oldDisplay = dragging.style.display;
         }
         dragging.style.display = 'none';
@@ -650,16 +672,22 @@ var sortable = function(sortableElements, options) {
     _on(items.concat(sortableElement), 'dragover', onDragOverEnter);
     _on(items.concat(sortableElement), 'dragenter', onDragOverEnter);
   });
-   return sortableElements;
+
+  return sortableElements;
 };
- sortable.destroy = function(sortableElement) {
+
+sortable.destroy = function(sortableElement) {
   _destroySortable(sortableElement);
 };
- sortable.enable = function(sortableElement) {
+
+sortable.enable = function(sortableElement) {
   _enableSortable(sortableElement);
 };
- sortable.disable = function(sortableElement) {
+
+sortable.disable = function(sortableElement) {
   _disableSortable(sortableElement);
 };
- return sortable;
-})); 
+
+
+return sortable;
+}));
