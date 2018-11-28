@@ -1,11 +1,18 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio_item, only: [:edit, :updae, :show, :destroy]
+  before_action :set_portfolio_item, only: [:edit, :updae, :show, :destroy, :sort]
   layout 'portfolio'
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
 	 def index
-		@portfolio_items = Portfolio.all
-	 end
+		@portfolio_items = Portfolio.by_position
+  end
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+
+    render nothing: true
+  end
    def angular
     @angular_portfolio_items = Portfolio.angular
    end
@@ -16,14 +23,14 @@ class PortfoliosController < ApplicationController
 	 end
 
 	def create
-			@portfolio_item = Portfolio.new(portfolio_params)
+		@portfolio_item = Portfolio.new(portfolio_params)
 
-    	respond_to do |format|
-     	 if @portfolio_item.save
-      	  format.html { redirect_to @portfolio_item, notice: 'Portfolio is now live.' }
-     	 else
-     	   format.html { render :new }
-        end
+    respond_to do |format|
+      if @portfolio_item.save
+      	format.html { redirect_to @portfolio_item, notice: 'Portfolio is now live.' }
+        else
+     	  format.html { render :new }
+      end
     end
  end
 
