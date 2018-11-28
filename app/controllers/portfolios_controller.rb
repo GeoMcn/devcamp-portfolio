@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
 
 	 def index
 		@portfolio_items = Portfolio.by_position
-
+  end
    def angular
     @angular_portfolio_items = Portfolio.angular
    end
@@ -16,14 +16,14 @@ class PortfoliosController < ApplicationController
 	 end
 
 	def create
-			@portfolio_item = Portfolio.new(portfolio_params)
+		@portfolio_item = Portfolio.new(portfolio_params)
 
-    	respond_to do |format|
-     	 if @portfolio_item.save
-      	  format.html { redirect_to @portfolio_item, notice: 'Portfolio is now live.' }
-     	 else
-     	   format.html { render :new }
-        end
+    respond_to do |format|
+      if @portfolio_item.save
+      	format.html { redirect_to @portfolio_item, notice: 'Portfolio is now live.' }
+        else
+     	  format.html { render :new }
+      end
     end
  end
 
