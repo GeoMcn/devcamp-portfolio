@@ -29,11 +29,11 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  width: 100%
 }
 
 body {
-  text-align: #fff;
+  
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
@@ -46,6 +46,8 @@ body {
 	min-height: 100%;
 	-webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
 			box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+  vertical-align: middle;
+  text-align: center;
 }
 
 .site-wrapper-inner {
@@ -139,7 +141,10 @@ body {
 
 	.site-wrapper-inner {
 	vertical-align: middle;
+  text-align: center
 	}
+
+
 
 	.masthead,
 	.mastfoot,
@@ -180,4 +185,27 @@ body {
 .app-nav span{
   margin-left: 17px;
   margin-right: 17px;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('harddrive.jpeg') no-repeat;
+  background-size: cover;
+}
+
+.page{
+  text-align: center;
+}
+
+.app-footer{
+ color: white; 
 }
