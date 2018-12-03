@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio_item, only: [:edit, :updae, :show, :destroy, :sort]
+  before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout 'portfolio'
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
 	 def index
 		@portfolio_items = Portfolio.by_position
@@ -19,7 +19,6 @@ class PortfoliosController < ApplicationController
 
 	 def new
 		@portfolio_item = Portfolio.new
-    3.times { @portfolio_item.technologies.build }
 	 end
 
 	def create
@@ -70,7 +69,7 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       :main_image,
                                       :thumb_image,
-                                      technologies_attributes: [:name])
+                                      technologies_attributes: [:id, :name, :_destroy])
   end
 
   def set_portfolio_item

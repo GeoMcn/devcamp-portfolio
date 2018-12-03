@@ -20,7 +20,7 @@ ready = ->
       return
     $.ajax
       type: 'PUT'
-      url: 'portfolios/sort'
+      url: '/portfolios/sort'
       data: order: updated_order
     return
   return
